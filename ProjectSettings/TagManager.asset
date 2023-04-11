@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Terrain
   - CameraSwitch
+  - KeyItem
   layers:
   - Default
   - TransparentFX

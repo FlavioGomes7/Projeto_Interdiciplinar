@@ -16,7 +16,7 @@ public class CharTankController : MonoBehaviour
         character = GetComponent<CapsuleCollider>();
     }
     
-    void Update()
+    void FixedUpdate()
     {
         if(Input.GetButton("Horizontal") || Input.GetButton ("Vertical"))
         {
@@ -27,5 +27,19 @@ public class CharTankController : MonoBehaviour
             character.transform.Translate(0f, 0f, verticalMove);
         }
         
+    }
+
+     void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "KeyItem")
+        {
+            
+            if(Input.GetKey("e"))
+            {
+                Debug.Log("Sucesso");
+                Destroy(other.gameObject);
+            }
+
+        }
     }
 }
