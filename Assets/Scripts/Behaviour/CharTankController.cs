@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CharTankController : MonoBehaviour
 {
-    CapsuleCollider character;
+    private CapsuleCollider character;
     private bool ismoving;
     private float rotationMove;
     private float verticalMove;
-    public float speedRotation;
-    public float speed;
+    [SerializeField] private float speedRotation;
+    [SerializeField] private float speed;
 
     void Start()
     {
@@ -29,17 +29,5 @@ public class CharTankController : MonoBehaviour
         
     }
 
-     void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "KeyItem")
-        {
-            
-            if(Input.GetKey("e"))
-            {
-                Debug.Log("Sucesso");
-                Destroy(other.gameObject);
-            }
-
-        }
-    }
+    
 }
