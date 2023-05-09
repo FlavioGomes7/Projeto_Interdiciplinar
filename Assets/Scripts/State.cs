@@ -24,7 +24,7 @@ public class State
    protected Transform[] waypoints;
    protected State nextState;
    
-   float visDist = 10.0f;
+   float visDist = 2.0f;
    float visAngle = 180.0f;
 
 
@@ -125,29 +125,34 @@ public class Chase : State
     {
 
       stateName = STATE.CHASE;
-      agent.speed = 1.5f;
-      agent.isStopped = false;
 
     }
 
     public override void Enter()
     {
+      agent.speed = 1.5f;
+      agent.isStopped = false;
       animator.SetTrigger("Walking");
       base.Enter();
     }
 
     public override void Update()
     {
+        Debug.Log("Esta perseguindo");
         agent.SetDestination(player.position);
+
         if(agent.hasPath)
         {
           if(!canSeePlayer())
           {
+            Debug.Log("Esta parando de perseguir");
             nextState = new Idle(enemy, agent, animator, player, waypoints);
             stage = EVENT.EXIT;
           }
 
         }
+          
+          
         base.Update();
     }
 
