@@ -10,13 +10,13 @@ public class Enemy : MonoBehaviour
     Animator animator;
     public Transform player;
     State currentState;
-    public Transform[] waypoints;
+    public Transform spawnpoint;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        currentState = new Idle(gameObject, agent, animator, player, waypoints);
+        currentState = new Idle(gameObject, agent, animator, player, spawnpoint);
         
     }
 

@@ -21,21 +21,21 @@ public class State
    protected NavMeshAgent agent;
    protected Animator animator;
    protected Transform player;
-   protected Transform[] waypoints;
+   protected Transform spawnPoint;
    protected State nextState;
    
-   float visDist = 2.0f;
+   float visDist = 5.0f;
    float visAngle = 180.0f;
 
 
 
-   public State(GameObject _enemy, NavMeshAgent _agent, Animator _animator, Transform _player, Transform[] _waypoints)
+   public State(GameObject _enemy, NavMeshAgent _agent, Animator _animator, Transform _player, Transform _spawnPoint)
    {
      enemy = _enemy;
      agent = _agent;
      animator = _animator;
      player = _player;
-     waypoints = _waypoints;
+     spawnPoint = _spawnPoint;
    }
 
    public virtual void Enter()
@@ -90,24 +90,23 @@ public class State
 public class Idle : State
 {
 
-    public Idle(GameObject _enemy, NavMeshAgent _agent, Animator _animator, Transform _player, Transform[] _waypoints) : base(_enemy, _agent, _animator, _player, _waypoints)
+    public Idle(GameObject _enemy, NavMeshAgent _agent, Animator _animator, Transform _player, Transform _spawnPoint) : base(_enemy, _agent, _animator, _player, _spawnPoint)
     {
         stateName = STATE.IDLE;
     }
 
     public override void Enter()
     {
-        agent.isStopped = true;
         animator.SetTrigger("Idle");
         Debug.Log("entrou em idle");
         base.Enter();
     }
     public override void Update()
     {
-        Debug.Log("Rodando Idle");
+        agent.isStopped = true;
         if(canSeePlayer())
         {
-          nextState = new Chase(enemy, agent, animator, player, waypoints);
+          nextState = new Chase(enemy, agent, animator, player, spawnPoint);
           stage = EVENT.EXIT;
         }
     }
@@ -121,7 +120,7 @@ public class Idle : State
 
 public class Chase : State
 {
-    public Chase(GameObject _enemy, NavMeshAgent _agent, Animator _animator, Transform _player, Transform[] _waypoints) : base(_enemy, _agent, _animator, _player, _waypoints)
+    public Chase(GameObject _enemy, NavMeshAgent _agent, Animator _animator, Transform _player, Transform _spawnPoint) : base(_enemy, _agent, _animator, _player, _spawnPoint)
     {
 
       stateName = STATE.CHASE;
@@ -145,15 +144,15 @@ public class Chase : State
         {
           if(!canSeePlayer())
           {
-            Debug.Log("Esta parando de perseguir");
-            nextState = new Idle(enemy, agent, animator, player, waypoints);
-            stage = EVENT.EXIT;
+        
+              Debug.Log("Esta parando de perseguir");
+              nextState = new Idle(enemy, agent, animator, player, spawnPoint);
+              stage = EVENT.EXIT;
+
           }
 
         }
-          
-          
-        base.Update();
+       base.Update();   
     }
 
     public override void Exit()

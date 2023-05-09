@@ -502,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f496a41a34d1024cb99ae2273ff9eac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.36
+      value: 6.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f496a41a34d1024cb99ae2273ff9eac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -510,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f496a41a34d1024cb99ae2273ff9eac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f496a41a34d1024cb99ae2273ff9eac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1523139047}
-  waypoints: []
+  spawnpoint: {fileID: 825447828}
 --- !u!195 &494490376
 NavMeshAgent:
   m_ObjectHideFlags: 0
