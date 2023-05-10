@@ -9,7 +9,7 @@ public class State
 
    public enum STATE
    {
-        IDLE, CHASE, ATTACKING
+        IDLE, CHASE, ATTACK
    }
    public enum EVENT
    {
@@ -24,8 +24,11 @@ public class State
    protected Transform spawnPoint;
    protected State nextState;
    
-   float visDist = 5.0f;
-   float visAngle = 180.0f;
+   private float visDist = 5.0f;
+   private float visAngle = 180.0f;
+
+   private float attackDist = 1.0f;
+   private float attackAngle = 20.0f;
 
 
 
@@ -82,6 +85,18 @@ public class State
 
    }
 
+   public bool canAttackPlayer()
+   {
+      Vector3 direction = player.position - enemy.transform.position;
+      float angle = Vector3.Angle(direction, enemy.transform.forward);
+      if(direction.magnitude < attackDist && angle < attackAngle )
+      {
+        return true;
+      }
+      return false;
+
+   }
+
 
 }
 
@@ -97,6 +112,7 @@ public class Idle : State
 
     public override void Enter()
     {
+        agent.isStopped = true;
         animator.SetTrigger("Idle");
         Debug.Log("entrou em idle");
         base.Enter();
@@ -104,9 +120,15 @@ public class Idle : State
     public override void Update()
     {
         agent.isStopped = true;
-        if(canSeePlayer())
+        if(canSeePlayer() && !canAttackPlayer())
         {
           nextState = new Chase(enemy, agent, animator, player, spawnPoint);
+          stage = EVENT.EXIT;
+        }
+        else if(canAttackPlayer() && canSeePlayer())
+        {
+          Debug.Log("Esta preparando para atacar");
+          nextState = new Attack(enemy, agent, animator, player, spawnPoint);
           stage = EVENT.EXIT;
         }
     }
@@ -137,7 +159,6 @@ public class Chase : State
 
     public override void Update()
     {
-        Debug.Log("Esta perseguindo");
         agent.SetDestination(player.position);
 
         if(agent.hasPath)
@@ -150,14 +171,66 @@ public class Chase : State
               stage = EVENT.EXIT;
 
           }
+          else if(canAttackPlayer())
+          {
+            Debug.Log("Esta preparando para atacar");
+            nextState = new Attack(enemy, agent, animator, player, spawnPoint);
+            stage = EVENT.EXIT;
+          }
 
         }
-       base.Update();   
+ 
     }
 
     public override void Exit()
     {
         animator.ResetTrigger("Walking");
+        base.Exit();
+    }
+
+
+
+
+}
+
+public class Attack : State
+{
+
+  public Attack(GameObject _enemy, NavMeshAgent _agent, Animator _animator, Transform _player, Transform _spawnPoint) : base(_enemy, _agent, _animator, _player, _spawnPoint)
+    {
+
+      stateName = STATE.ATTACK;
+
+    }
+
+     public override void Enter()
+    {
+      agent.isStopped = true;
+      animator.SetTrigger("Attacking");
+      base.Enter();
+    }
+
+     public override void Update()
+    {
+
+        if(canAttackPlayer())
+        {
+          Debug.Log("Esta atacando de novo");
+          nextState = new Idle(enemy, agent, animator, player, spawnPoint);
+          stage = EVENT.EXIT;
+        }
+        else if(!canAttackPlayer())
+        {
+          Debug.Log("Esta parando de atacar");
+          nextState = new Chase(enemy, agent, animator, player, spawnPoint);
+          stage = EVENT.EXIT;
+        }
+
+    }
+
+     public override void Exit()
+    {
+        animator.ResetTrigger("Attacking");
         base.Exit();
     }
 
