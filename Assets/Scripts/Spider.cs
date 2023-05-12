@@ -11,26 +11,26 @@ public class Spider : MonoBehaviour
     public Transform spawnpoint;
     private Transform enemy;
     [SerializeField] private float visDist = 5.0f;
-    [SerializeField]private float visAngle = 180.0f;
-
-    [SerializeField]private float attackDist = 1.0f;
-    [SerializeField] private float attackAngle = 20.0f;
+    [SerializeField]private float attackDist = 0.5f;
+    [SerializeField] private float attackAngle = 180.0f;
     public bool canSeePlayer()
    {
-      Vector3 direction = player.position - enemy.transform.position;
-      float angle = Vector3.Angle(direction, enemy.transform.forward);
-      if(direction.magnitude < visDist && angle < visAngle )
+      float distance = Vector3.Distance(player.position, enemy.position);
+      //float angle = Vector3.Angle(distance, enemy.transform.forward);
+      if(distance < visDist )
       {
         return true;
       }
       return false;
-
+      
    }
 
    public bool canAttackPlayer()
    {
       Vector3 direction = player.position - enemy.transform.position;
+      Debug.Log("Distancia:" + direction.magnitude);
       float angle = Vector3.Angle(direction, enemy.transform.forward);
+      Debug.Log("angulo:" + angle);
       if(direction.magnitude < attackDist && angle < attackAngle )
       {
         return true;
@@ -48,37 +48,20 @@ public class Spider : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        agent.SetDestination(player.position);
-        Debug.Log(agent.hasPath);
-        if(agent.hasPath)
-        {
-            agent.SetDestination(player.position);
-            Debug.Log("Tem caminho?");
-            if(canSeePlayer() && !canAttackPlayer())
-            {
-            agent.isStopped = false;
-            animator.SetTrigger("Walking");
-            Debug.Log("Esta andando");
-            }
-            else if(canSeePlayer() && canAttackPlayer())
-            {
-            agent.isStopped = false;
-            animator.SetTrigger("Attacking");
-            Debug.Log("Esta atacando");
-            
-            }
 
+        agent.SetDestination(player.position);
+        if(!canSeePlayer() || canAttackPlayer())
+        {
+            agent.isStopped = true;
         }
         else
         {
-            agent.isStopped = true;
-            animator.SetTrigger("Idle");
-
+            agent.isStopped = false;
         }
-        
-        
+        animator.SetBool("isVisible", canSeePlayer());
+        animator.SetBool("isNear", canAttackPlayer());
         
         
     }
