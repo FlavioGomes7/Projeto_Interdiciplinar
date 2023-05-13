@@ -4,30 +4,95 @@ using UnityEngine;
 
 public class CharTankController : MonoBehaviour
 {
+    Animator animator;
     private CapsuleCollider character;
-    private bool ismoving;
+    private bool isWalking;
+    private bool isAiming;
+    private bool isShooting;
+    private bool isDamaged;
     private float rotationMove;
     private float verticalMove;
     [SerializeField] private float speedRotation;
     [SerializeField] private float speed;
 
-    void Start()
+    private void IsMoving()
     {
-        character = GetComponent<CapsuleCollider>();
-    }
-    
-    void FixedUpdate()
-    {
-        if(Input.GetButton("Horizontal") || Input.GetButton ("Vertical"))
+        if ((Input.GetButton("Horizontal") || Input.GetButton("Vertical")) && isAiming == false)
         {
-            ismoving = true;
+            isWalking = true;
             rotationMove = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speedRotation;
             verticalMove = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
             character.transform.Rotate(0f, rotationMove, 0f);
             character.transform.Translate(0f, 0f, verticalMove);
         }
-        
-    }
 
+        else
+        {
+            isWalking = false;
+        }
+    }
+    private void IsAiming()
+    {
+        if(Input.GetButton("Fire2"))
+        {
+            rotationMove = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speedRotation;
+            character.transform.Rotate(0f, rotationMove, 0f);
+            isAiming = true;
+            isWalking = false;
+        }
+        else
+        {
+            isAiming = false;
+        }
+  
+    }
+    private void IsShooting()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            isShooting = true;
+            isWalking = false;
+        }
+        else
+        {
+            isShooting = false;
+        }
+    }
+    private void IsDamaged()
+    {
+        isDamaged = true;
+    }
+    /*void Pickup()
+    {
+        GameManager.instance.AddItem(Item);
+        Destroy(gameObject);
+    }*/
+
+    void Start()
+    {
+        character = GetComponent<CapsuleCollider>();
+        animator = GetComponent<Animator>();
+    }
     
+    void FixedUpdate()
+    {
+
+        IsMoving();
+        IsAiming();
+        IsShooting();
+        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isAiming", isAiming);
+        animator.SetBool("isShooting", isShooting);
+    }
+    /*void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "KeyItem" && Input.GetKey("e"))
+        {
+
+            Pickup();
+
+        }
+    }*/
+
+
 }

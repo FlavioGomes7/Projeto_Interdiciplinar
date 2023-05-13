@@ -24,7 +24,7 @@ public class Spider : MonoBehaviour
       return false;
       
    }
-
+    
    public bool canAttackPlayer()
    {
       Vector3 direction = player.position - enemy.transform.position;
@@ -52,17 +52,20 @@ public class Spider : MonoBehaviour
     {
 
         agent.SetDestination(player.position);
-        if(!canSeePlayer() || canAttackPlayer())
+        agent.speed = 1.8f;
+        if(agent.hasPath)
         {
-            agent.isStopped = true;
+            if (!canSeePlayer() || canSeePlayer() && canAttackPlayer())
+            {
+                agent.isStopped = true;
+            }
+            else
+            {
+                agent.isStopped = false;
+            }
+            animator.SetBool("isVisible", canSeePlayer());
+            animator.SetBool("isNear", canAttackPlayer());
         }
-        else
-        {
-            agent.isStopped = false;
-        }
-        animator.SetBool("isVisible", canSeePlayer());
-        animator.SetBool("isNear", canAttackPlayer());
-        
         
     }
 }
