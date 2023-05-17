@@ -5,19 +5,16 @@ using UnityEngine.AI;
 
 public class Spider : MonoBehaviour
 {
+    [SerializeField] private EnemySO enemyInfo;
     Animator animator;
     NavMeshAgent agent;
     public Transform player;
     public Transform spawnpoint;
     private Transform enemy;
-    [SerializeField] private float visDist = 5.0f;
-    [SerializeField]private float attackDist = 0.5f;
-    [SerializeField] private float attackAngle = 180.0f;
     public bool canSeePlayer()
    {
       float distance = Vector3.Distance(player.position, enemy.position);
-      //float angle = Vector3.Angle(distance, enemy.transform.forward);
-      if(distance < visDist )
+      if(distance < enemyInfo.visDist )
       {
         return true;
       }
@@ -28,10 +25,8 @@ public class Spider : MonoBehaviour
    public bool canAttackPlayer()
    {
       Vector3 direction = player.position - enemy.transform.position;
-      Debug.Log("Distancia:" + direction.magnitude);
       float angle = Vector3.Angle(direction, enemy.transform.forward);
-      Debug.Log("angulo:" + angle);
-      if(direction.magnitude < attackDist && angle < attackAngle )
+      if(direction.magnitude < enemyInfo.attackDist && angle < enemyInfo.attackAngle)
       {
         return true;
       }
@@ -52,7 +47,7 @@ public class Spider : MonoBehaviour
     {
 
         agent.SetDestination(player.position);
-        agent.speed = 1.8f;
+        agent.speed = enemyInfo.speed;
         if(agent.hasPath)
         {
             if (!canSeePlayer() || canSeePlayer() && canAttackPlayer())

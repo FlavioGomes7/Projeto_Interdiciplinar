@@ -1087,6 +1087,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
+  hpmax: 0
+  hpNow: 0
 --- !u!1 &742926189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,6 +1661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 10c1723d81bede44c85e61335b713820, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10c1723d81bede44c85e61335b713820, type: 3}
 --- !u!1 &1065307144 stripped
@@ -1736,11 +1742,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b292c81e733490246a4f66d8b6cf666d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyInfo: {fileID: 11400000, guid: 6d108923c5a0c5d4a87a63ed70fafcef, type: 2}
   player: {fileID: 1312901705}
   spawnpoint: {fileID: 0}
-  visDist: 5
-  attackDist: 0.5
-  attackAngle: 20
 --- !u!1 &1175138630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,6 +1932,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8c5a9260e421cb346802291792e15c44, type: 3}
       propertyPath: m_Name
       value: MESH_CHARACTER_ALL_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c5a9260e421cb346802291792e15c44, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c5a9260e421cb346802291792e15c44, type: 3}

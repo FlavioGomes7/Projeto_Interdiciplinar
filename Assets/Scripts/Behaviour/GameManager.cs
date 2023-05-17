@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private List<Item> Items = new List<Item>();
+    [SerializeField] private int hpmax;
+    [SerializeField] private int hpNow;
+
 
     private void Awake()
     {
@@ -30,6 +33,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(game);
         }
+        
+    }
+
+    public void TakeDamage()
+    {
         
     }
 

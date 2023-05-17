@@ -10,6 +10,7 @@ public class CharTankController : MonoBehaviour
     private bool isAiming;
     private bool isShooting;
     private bool isDamaged;
+    private bool isReverse;
     private float rotationMove;
     private float verticalMove;
     [SerializeField] private float speedRotation;
@@ -24,10 +25,19 @@ public class CharTankController : MonoBehaviour
             verticalMove = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
             character.transform.Rotate(0f, rotationMove, 0f);
             character.transform.Translate(0f, 0f, verticalMove);
+            if(Input.GetAxisRaw("Vertical") == -1)
+            {
+                isReverse = true;
+            }
+            else
+            {
+                isReverse = false;
+            }
         }
 
         else
         {
+            isReverse = false;
             isWalking = false;
         }
     }
@@ -35,7 +45,7 @@ public class CharTankController : MonoBehaviour
     {
         if(Input.GetButton("Fire2"))
         {
-            rotationMove = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speedRotation;
+            rotationMove = Input.GetAxis("Horizontal") * Time.deltaTime * speedRotation;
             character.transform.Rotate(0f, rotationMove, 0f);
             isAiming = true;
             isWalking = false;
@@ -62,11 +72,6 @@ public class CharTankController : MonoBehaviour
     {
         isDamaged = true;
     }
-    /*void Pickup()
-    {
-        GameManager.instance.AddItem(Item);
-        Destroy(gameObject);
-    }*/
 
     void Start()
     {
@@ -83,16 +88,8 @@ public class CharTankController : MonoBehaviour
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isAiming", isAiming);
         animator.SetBool("isShooting", isShooting);
+        animator.SetBool("isReverse", isReverse);
     }
-    /*void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "KeyItem" && Input.GetKey("e"))
-        {
-
-            Pickup();
-
-        }
-    }*/
-
+    
 
 }
