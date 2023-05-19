@@ -63,4 +63,19 @@ public class Spider : MonoBehaviour
         }
         
     }
+
+    public void OnTriggerStay(Collider other)
+    {
+
+        if(other.tag == "Player")
+        {
+           
+        }
+        
+
+    }
+    public void OnTriggerExit()
+    {
+    
+    }
 }

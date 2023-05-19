@@ -40,6 +40,26 @@ public class CharTankController : MonoBehaviour
             isReverse = false;
             isWalking = false;
         }
+
+        /*if ((Input.GetButton("Horizontal") || Input.GetButton("Vertical")) && isAiming == false)
+        {
+            isWalking = true;
+            Vector3 direction = new Vector3( Input.GetAxisRaw("Vertical"), 0f, Input.GetAxisRaw("Horizontal"));
+            direction.Normalize();
+            transform.Translate(direction * speed * Time.deltaTime, Space.World);
+            if(direction != Vector3.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, speedRotation * Time.deltaTime);
+            }
+           
+        }
+
+        else
+        {
+            isReverse = false;
+            isWalking = false;
+        }*/
     }
     private void IsAiming()
     {
