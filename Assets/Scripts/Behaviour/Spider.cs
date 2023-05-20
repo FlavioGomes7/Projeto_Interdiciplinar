@@ -11,6 +11,8 @@ public class Spider : MonoBehaviour
     public Transform player;
     public Transform spawnpoint;
     private Transform enemy;
+
+
     public bool canSeePlayer()
    {
       float distance = Vector3.Distance(player.position, enemy.position);
@@ -33,6 +35,7 @@ public class Spider : MonoBehaviour
       return false;
 
    }
+
     void Start()
     {
 
@@ -50,6 +53,7 @@ public class Spider : MonoBehaviour
         agent.speed = enemyInfo.speed;
         if(agent.hasPath)
         {
+
             if (!canSeePlayer() || canSeePlayer() && canAttackPlayer())
             {
                 agent.isStopped = true;
@@ -60,22 +64,10 @@ public class Spider : MonoBehaviour
             }
             animator.SetBool("isVisible", canSeePlayer());
             animator.SetBool("isNear", canAttackPlayer());
+  
         }
         
     }
 
-    public void OnTriggerStay(Collider other)
-    {
 
-        if(other.tag == "Player")
-        {
-           
-        }
-        
-
-    }
-    public void OnTriggerExit()
-    {
-    
-    }
 }

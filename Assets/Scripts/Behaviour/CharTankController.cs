@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,8 @@ public class CharTankController : MonoBehaviour
     private bool isWalking;
     private bool isAiming;
     private bool isShooting;
-    private bool isDamaged;
     private bool isReverse;
+    private bool isDamaged;
     private float rotationMove;
     private float verticalMove;
     [SerializeField] private float speedRotation;
@@ -88,10 +89,8 @@ public class CharTankController : MonoBehaviour
             isShooting = false;
         }
     }
-    private void IsDamaged()
-    {
-        isDamaged = true;
-    }
+
+    
 
     void Start()
     {
@@ -108,8 +107,34 @@ public class CharTankController : MonoBehaviour
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isAiming", isAiming);
         animator.SetBool("isShooting", isShooting);
+        animator.SetBool("isDamaged", isDamaged);
         animator.SetBool("isReverse", isReverse);
     }
-    
+
+    public void OnTriggerEnter(Collider other)
+    {
+
+        if (other.tag == "Spider")
+        {
+
+            isDamaged = true;
+            
+
+        }
+
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+
+        if (other.tag == "Spider")
+        {
+
+            isDamaged = false;
+
+        }
+        
+    }
+
 
 }

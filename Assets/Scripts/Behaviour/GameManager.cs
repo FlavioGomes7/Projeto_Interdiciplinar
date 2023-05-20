@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int hpNow;
     [SerializeField] private int damage;
 
-
     private void Awake()
     {
         instance = this;
@@ -55,6 +54,15 @@ public class GameManager : MonoBehaviour
         hp -= damage;
     }
 
+    public void Start()
+    {
+        hpNow = hpmax;
+    }
 
+    public void Update()
+    {
+
+        Debug.Log(hpNow);
+    }
 
 }
