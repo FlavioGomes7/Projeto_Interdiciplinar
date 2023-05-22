@@ -16,6 +16,8 @@ public class CharTankController : MonoBehaviour
     private float verticalMove;
     [SerializeField] private float speedRotation;
     [SerializeField] private float speed;
+    [SerializeField] private float fireRate;
+    
 
     private void IsMoving()
     {
@@ -77,18 +79,13 @@ public class CharTankController : MonoBehaviour
         }
   
     }
-    private void IsShooting()
+    IEnumerator FireShoot()
     {
-        if (Input.GetButton("Fire1"))
-        {
-            isShooting = true;
-            isWalking = false;
-        }
-        else
-        {
-            isShooting = false;
-        }
+        animator.Play("Fire_Shooter_Anim");
+        yield return new WaitForSeconds (fireRate);
+        isShooting = false;
     }
+
 
     
 
@@ -100,13 +97,16 @@ public class CharTankController : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (Input.GetButton("Fire1") && Input.GetButton("Fire2") && isShooting == false)
+        {
+          isShooting = true;
+          StartCoroutine(FireShoot());
 
+        }
         IsMoving();
         IsAiming();
-        IsShooting();
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isAiming", isAiming);
-        animator.SetBool("isShooting", isShooting);
         animator.SetBool("isDamaged", isDamaged);
         animator.SetBool("isReverse", isReverse);
     }
@@ -118,7 +118,7 @@ public class CharTankController : MonoBehaviour
         {
 
             isDamaged = true;
-            
+
 
         }
 
@@ -135,6 +135,7 @@ public class CharTankController : MonoBehaviour
         }
         
     }
+
 
 
 }

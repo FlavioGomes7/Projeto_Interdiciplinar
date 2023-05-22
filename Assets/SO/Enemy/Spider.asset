@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Spider
   m_EditorClassIdentifier: 
   id: 
-  damage: 1
   isStun: 0
-  visDist: 4
+  visDist: 10
   attackDist: 1
-  attackAngle: 180
+  attackAngle: 30
+  attackRate: 2.1
   speed: 1.8

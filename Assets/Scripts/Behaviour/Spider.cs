@@ -6,11 +6,14 @@ using UnityEngine.AI;
 public class Spider : MonoBehaviour
 {
     [SerializeField] private EnemySO enemyInfo;
+    [SerializeField] private AttributesManager playerAtm;
+    [SerializeField] private AttributesManager enemyAtm;
     Animator animator;
     NavMeshAgent agent;
     public Transform player;
     public Transform spawnpoint;
     private Transform enemy;
+    private bool isAttacking;
 
 
     public bool canSeePlayer()
@@ -36,6 +39,14 @@ public class Spider : MonoBehaviour
 
    }
 
+   IEnumerator AttackPlayer()
+    {
+        animator.Play("Spider_Attack");
+        yield return new WaitForSeconds (enemyInfo.attackRate);
+        isAttacking = false;
+
+    }
+
     void Start()
     {
 
@@ -54,19 +65,42 @@ public class Spider : MonoBehaviour
         if(agent.hasPath)
         {
 
-            if (!canSeePlayer() || canSeePlayer() && canAttackPlayer())
+            if(canAttackPlayer() && !isAttacking)
             {
                 agent.isStopped = true;
+                isAttacking = true;
+                StartCoroutine(AttackPlayer());
+            }
+            else if((canSeePlayer() && isAttacking) || (!canSeePlayer()))
+            {
+              agent.isStopped = true;
+
             }
             else
             {
                 agent.isStopped = false;
             }
             animator.SetBool("isVisible", canSeePlayer());
-            animator.SetBool("isNear", canAttackPlayer());
   
         }
         
+    }
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Spider")
+        {
+ 
+
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Spider")
+        {
+
+
+        }
     }
 
 
