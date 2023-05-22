@@ -8,7 +8,7 @@ public class Spider : MonoBehaviour
     [SerializeField] private EnemySO enemyInfo;
     Animator animator;
     NavMeshAgent agent;
-    public Transform player;
+    private Transform player;
     public Transform spawnpoint;
     private Transform enemy;
 
@@ -38,7 +38,7 @@ public class Spider : MonoBehaviour
 
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy = GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
