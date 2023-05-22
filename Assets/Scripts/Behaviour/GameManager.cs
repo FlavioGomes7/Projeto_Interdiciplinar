@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private List<Item> Items = new List<Item>();
+    [SerializeField] private int hpmax;
+    [SerializeField] private int hpNow;
+    [SerializeField] private int damage;
 
     private void Awake()
     {
@@ -33,6 +37,32 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void TakeDamage(int damage)
+    {
+        hpNow -= damage;  
+    }
+    public void RecorverHealth(int healthrecorver)
+    {
+        hpNow += healthrecorver;
+    }
+    public void IncreseHealthMax(int healthIncrese)
+    {
+        hpmax += healthIncrese;
+    }
+    public void GiveDamage(int hp)
+    {
+        hp -= damage;
+    }
 
+    public void Start()
+    {
+        hpNow = hpmax;
+    }
+
+    public void Update()
+    {
+
+        Debug.Log(hpNow);
+    }
 
 }
