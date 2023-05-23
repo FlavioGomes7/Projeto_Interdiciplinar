@@ -107,34 +107,10 @@ public class CharTankController : MonoBehaviour
         IsAiming();
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isAiming", isAiming);
-        animator.SetBool("isDamaged", isDamaged);
         animator.SetBool("isReverse", isReverse);
     }
 
-    public void OnTriggerEnter(Collider other)
-    {
-
-        if (other.tag == "Spider")
-        {
-
-            isDamaged = true;
-
-
-        }
-
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-
-        if (other.tag == "Spider")
-        {
-
-            isDamaged = false;
-
-        }
-        
-    }
+   
 
 
 
