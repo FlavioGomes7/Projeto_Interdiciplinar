@@ -28,8 +28,8 @@ public class CharTankController : MonoBehaviour
             isWalking = true;
             rotationMove = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speedRotation;
             verticalMove = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
-            character.transform.Rotate(0f, rotationMove, 0f);
-            character.transform.Translate(0f, 0f, verticalMove);
+            transform.Rotate(0f, rotationMove, 0f);
+            transform.Translate(0f, 0f, verticalMove);
             if(Input.GetAxisRaw("Vertical") == -1)
             {
                 isReverse = true;
@@ -70,8 +70,12 @@ public class CharTankController : MonoBehaviour
     {
         if(Input.GetButton("Fire2"))
         {
-            rotationMove = Input.GetAxis("Horizontal") * Time.deltaTime * speedRotation;
-            character.transform.Rotate(0f, rotationMove, 0f);
+    
+            Vector3 targetposition = GameManager.instance.AutoAim().transform.position;
+            Vector3 forward = new Vector3(targetposition.x - transform.position.x, targetposition.y - transform.position.y, targetposition.z - transform.position.z);
+            //Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetposition, rotationMove, 0);
+            transform.forward = forward;
+          //character.transform.rotation = Quaternion.LookRotation(newDirection);
             isAiming = true;
             isWalking = false;
         }

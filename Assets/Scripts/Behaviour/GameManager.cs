@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] private List<Item> Items = new List<Item>();
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject[] enemys;
+    [SerializeField] private GameObject[] enemies;
    
 
     private void Awake()
@@ -36,15 +36,36 @@ public class GameManager : MonoBehaviour
         }
         
     }
-    public GameObject AutoAim(GameObject[] enemys)
+    public GameObject AutoAim()
     {
-        
+        float minDistance = Mathf.Infinity;
+        float distance;
+        int indexOfCloserEnemy = 0;
+        for (int i = 0; i < enemies.Length; i++)
+        {
+   
+            distance = Vector3.Distance(player.transform.position, enemies[i].transform.position);
+            if (minDistance > distance)
+            {
+               minDistance = distance;
+               indexOfCloserEnemy = i;
+
+            }
+
+        }
+        return enemies[indexOfCloserEnemy];
     }
 
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+    public void Update()
+    {
+        
+
+
     }
     
 

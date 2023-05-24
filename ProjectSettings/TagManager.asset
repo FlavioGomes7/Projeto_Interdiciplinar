@@ -7,7 +7,7 @@ TagManager:
   - Terrain
   - CameraSwitch
   - KeyItem
-  - Spider
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -6,11 +6,9 @@ using UnityEngine.AI;
 public class Spider : MonoBehaviour
 {
     [SerializeField] private EnemySO enemyInfo;
-    [SerializeField] private AttributesManager playerAtm;
-    [SerializeField] private AttributesManager enemyAtm;
     Animator animator;
     NavMeshAgent agent;
-    public GameObject player;
+    private GameObject player;
     public Transform spawnpoint;
     private Transform enemy;
     private bool isAttacking;
@@ -87,23 +85,7 @@ public class Spider : MonoBehaviour
         }
         
     }
-    public void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Spider")
-        {
- 
-
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Spider")
-        {
-
-
-        }
-    }
+    
 
 
 }
