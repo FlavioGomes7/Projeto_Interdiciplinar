@@ -17,6 +17,8 @@ public class CharTankController : MonoBehaviour
     [SerializeField] private float speedRotation;
     [SerializeField] private float speed;
     [SerializeField] private float fireRate;
+    [SerializeField] private int health;
+    [SerializeField] private int attack;
     
 
     private void IsMoving()

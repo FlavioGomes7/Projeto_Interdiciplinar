@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private List<Item> Items = new List<Item>();
-    [SerializeField] private AttributesManager playerAtm;
-    [SerializeField] private AttributesManager enemyAtm;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject[] enemys;
    
 
     private void Awake()
@@ -35,6 +35,16 @@ public class GameManager : MonoBehaviour
             Destroy(game);
         }
         
+    }
+    public GameObject AutoAim(GameObject[] enemys)
+    {
+        
+    }
+
+    public void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        enemys = GameObject.FindGameObjectsWithTag("Enemy");
     }
     
 
