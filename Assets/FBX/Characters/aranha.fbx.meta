@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10c1723d81bede44c85e61335b713820
+guid: 1c33e9de20514da4491d9a48b2c28c7f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -36,8 +36,8 @@ ModelImporter:
       name: Armature|Spider_Attack
       takeName: Armature|Spider_Attack
       internalID: -6496572278993706486
-      firstFrame: 3
-      lastFrame: 51
+      firstFrame: 0
+      lastFrame: 55
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

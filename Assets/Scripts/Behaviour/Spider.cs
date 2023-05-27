@@ -12,6 +12,7 @@ public class Spider : MonoBehaviour
     public Transform spawnpoint;
     private Transform enemy;
     private bool isAttacking;
+    public int hp;
 
 
     public bool canSeePlayer()
@@ -41,7 +42,8 @@ public class Spider : MonoBehaviour
     {
         animator.Play("Spider_Attack");
         player.GetComponent<Animator>().Play("Damage_Pose");
-        yield return new WaitForSeconds (enemyInfo.attackRate);
+        player.GetComponent<CharTankController>().health -= enemyInfo.attack;
+        yield return new WaitForSeconds(enemyInfo.attackRate);
         isAttacking = false;
 
     }
@@ -53,6 +55,7 @@ public class Spider : MonoBehaviour
         enemy = GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        hp = enemyInfo.health;
         
     }
 

@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class CharTankController : MonoBehaviour
 {
-    Animator animator;
-    private CapsuleCollider character;
+    private Animator animator;
+    private GameObject character;
     private bool isWalking;
     private bool isAiming;
     private bool isShooting;
@@ -17,7 +18,8 @@ public class CharTankController : MonoBehaviour
     [SerializeField] private float speedRotation;
     [SerializeField] private float speed;
     [SerializeField] private float fireRate;
-    [SerializeField] private int health;
+    [SerializeField] private float fireRange;
+    [SerializeField] public int health;
     [SerializeField] private int attack;
     
 
@@ -73,9 +75,7 @@ public class CharTankController : MonoBehaviour
     
             Vector3 targetposition = GameManager.instance.AutoAim().transform.position;
             Vector3 forward = new Vector3(targetposition.x - transform.position.x, targetposition.y - transform.position.y, targetposition.z - transform.position.z);
-            //Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetposition, rotationMove, 0);
             transform.forward = forward;
-          //character.transform.rotation = Quaternion.LookRotation(newDirection);
             isAiming = true;
             isWalking = false;
         }
@@ -88,16 +88,30 @@ public class CharTankController : MonoBehaviour
     IEnumerator FireShoot()
     {
         animator.Play("Fire_Shooter_Anim");
+        GameObject target = GameManager.instance.AutoAim();
+        target.GetComponent<Spider>().hp -= attack;
         yield return new WaitForSeconds (fireRate);
         isShooting = false;
     }
 
+   /*public bool CanAttackEnemy()
+    {
+        Vector3 direction = player.transform.position - enemy.transform.position;
+        float angle = Vector3.Angle(direction, enemy.transform.forward);
+        if (direction.magnitude < enemyInfo.attackDist && angle < enemyInfo.attackAngle)
+        {
+            return true;
+        }
+        return false;
 
-    
+    }*/
+
+
+
 
     void Start()
     {
-        character = GetComponent<CapsuleCollider>();
+        character = GetComponent<GameObject>();
         animator = GetComponent<Animator>();
     }
     

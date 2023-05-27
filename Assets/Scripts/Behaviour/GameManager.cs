@@ -2,10 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject options;
     [SerializeField] private List<Item> Items = new List<Item>();
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject[] enemies;
@@ -16,6 +20,7 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    //Inventory Manager
     public void AddItem(Item item)
     {
         Items.Add(item);
@@ -36,6 +41,8 @@ public class GameManager : MonoBehaviour
         }
         
     }
+
+    // AutoAim System
     public GameObject AutoAim()
     {
         float minDistance = Mathf.Infinity;
@@ -56,10 +63,36 @@ public class GameManager : MonoBehaviour
         return enemies[indexOfCloserEnemy];
     }
 
+    //Scenes Manager
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log("Saiu");
+        Application.Quit();
+    }
+
+    public void OpenOptions()
+    {
+        menu.SetActive(false);
+        options.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        menu.SetActive(true);
+        options.SetActive(false);
+    }
+
+
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
     }
     public void Update()
     {

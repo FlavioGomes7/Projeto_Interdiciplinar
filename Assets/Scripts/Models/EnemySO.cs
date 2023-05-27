@@ -12,8 +12,8 @@ public class EnemySO : ScriptableObject
     [SerializeField] public float attackDist;
     [SerializeField] public float attackAngle;
     [SerializeField] public float attackRate;
-    [SerializeField] private float attack;
-    [SerializeField] private float health;
+    [SerializeField] public int attack;
+    [SerializeField] public int health;
     [SerializeField] public float speed;
 
 
