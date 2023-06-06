@@ -1,26 +1,11 @@
 fileFormatVersion: 2
-guid: 2e538e4ca1ba8d54bb4b8be703f8f1e3
+guid: 113a623a310ef0f41a8a30c87d4a9dac
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grass
-    second: {fileID: 2100000, guid: 9a345549c5fe2624d9e651446de5e261, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Difusse_FirstScene_Texturejpg
-    second: {fileID: 2800000, guid: 41a6c52e403b00041836e0536f405b15, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: NormalMap_FirstScene
-    second: {fileID: 2800000, guid: 952745e9b428f574eaa401e68eeaf3f0, type: 3}
+  externalObjects: {}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
