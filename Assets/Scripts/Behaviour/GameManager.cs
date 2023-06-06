@@ -75,6 +75,11 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void OpenOptions()
     {
         menu.SetActive(false);

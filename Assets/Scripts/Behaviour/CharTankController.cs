@@ -15,8 +15,8 @@ public class CharTankController : MonoBehaviour
     private bool isDamaged;
     private float rotationMove;
     private float verticalMove;
-    [SerializeField] private float speedRotation;
-    [SerializeField] private float speed;
+    [SerializeField] public float speedRotation;
+    [SerializeField] public float speed;
     [SerializeField] private float fireRate;
     [SerializeField] private float fireRange;
     [SerializeField] public int health;
@@ -128,6 +128,10 @@ public class CharTankController : MonoBehaviour
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isAiming", isAiming);
         animator.SetBool("isReverse", isReverse);
+        if(health <= 0)
+        {
+            GameManager.instance.BackToMenu();
+        }
     }
 
    
