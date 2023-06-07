@@ -1170,10 +1170,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1, z: -0.05}
 --- !u!114 &4623404716635239111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1188,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedRotation: 180
   speed: 3
+  fireRate: 0.8
+  fireRange: 3
+  health: 5
+  attack: 1
 --- !u!1 &5591134795504877355
 GameObject:
   m_ObjectHideFlags: 0

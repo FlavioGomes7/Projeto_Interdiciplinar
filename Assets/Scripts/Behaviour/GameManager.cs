@@ -10,12 +10,23 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject options;
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject btns;
     [SerializeField] private List<Item> Items = new List<Item>();
+    [SerializeField] private Item item;
+    [SerializeField] private GameObject gameObj;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject[] enemies;
    
 
-    private void Awake()
+    public void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+    }
+
+     private void Awake()
     {
         instance = this;
     }
@@ -31,15 +42,31 @@ public class GameManager : MonoBehaviour
         Items.Remove(item);
     }
 
-    public void Unlock(Item itemSO, GameObject game)
+    public void Unlock(Item itemSO, GameObject gameobj)
     {
         bool unlock = false;
         unlock = Items.Contains(itemSO);
         if(unlock == true)
         {
-            Destroy(game);
+            Destroy(gameobj);
         }
         
+    }
+    public void Pickup()
+    {
+        GameManager.instance.AddItem(item);
+        gameObj.SetActive(false);
+    }
+
+    public void GetItemData(Item itemData, GameObject gameobj)
+    {
+        item = itemData;
+        gameObj = gameobj;
+    }
+    public void EndItemDialogue()
+    {
+        dialoguePanel.SetActive(false);
+        btns.SetActive(false);
     }
 
     // AutoAim System
@@ -92,19 +119,6 @@ public class GameManager : MonoBehaviour
         options.SetActive(false);
     }
 
-
-    public void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-    }
-    public void Update()
-    {
-        
-
-
-    }
     
 
 }

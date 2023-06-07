@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class CharTankController : MonoBehaviour
 {
@@ -22,6 +21,30 @@ public class CharTankController : MonoBehaviour
     [SerializeField] public int health;
     [SerializeField] private int attack;
     
+    void Start()
+    {
+        character = GetComponent<GameObject>();
+        animator = GetComponent<Animator>();
+    }
+    
+    void FixedUpdate()
+    {
+        if (Input.GetButton("Fire1") && Input.GetButton("Fire2") && isShooting == false)
+        {
+          isShooting = true;
+          StartCoroutine(FireShoot());
+
+        }
+        IsMoving();
+        IsAiming();
+        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isAiming", isAiming);
+        animator.SetBool("isReverse", isReverse);
+        if(health <= 0)
+        {
+            GameManager.instance.BackToMenu();
+        }
+    }
 
     private void IsMoving()
     {
@@ -105,34 +128,6 @@ public class CharTankController : MonoBehaviour
         return false;
 
     }*/
-
-
-
-
-    void Start()
-    {
-        character = GetComponent<GameObject>();
-        animator = GetComponent<Animator>();
-    }
-    
-    void FixedUpdate()
-    {
-        if (Input.GetButton("Fire1") && Input.GetButton("Fire2") && isShooting == false)
-        {
-          isShooting = true;
-          StartCoroutine(FireShoot());
-
-        }
-        IsMoving();
-        IsAiming();
-        animator.SetBool("isWalking", isWalking);
-        animator.SetBool("isAiming", isAiming);
-        animator.SetBool("isReverse", isReverse);
-        if(health <= 0)
-        {
-            GameManager.instance.BackToMenu();
-        }
-    }
 
    
 

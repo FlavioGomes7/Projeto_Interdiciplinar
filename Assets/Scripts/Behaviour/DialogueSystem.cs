@@ -6,38 +6,85 @@ using TMPro;
 public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] private string[] dialogues;
-    private GameObject dialoguePanel; 
+    [SerializeField] private string itemDescription;
+    [SerializeField] private Item item;
+    [SerializeField] private GameObject dialoguePanel; 
     public int dialogueIndex;
 
+    public GameObject btns;
+
+
     public TextMeshProUGUI dialogueText;
-    public bool readyToSpeak;
+    public bool readyToInteract;
     public bool startDialogue;
+    public bool isItem;
     
 
     void Start()
     {
-        dialoguePanel = GameObject.FindObjectOfType<Canvas>().gameObject;
         dialoguePanel.SetActive(false);
-        readyToSpeak = false;
+        btns.SetActive(false);
+        readyToInteract = false;
         startDialogue = false;  
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("e") && readyToSpeak && !startDialogue)
+        if(isItem == false)
         {
+            if(Input.GetKey("e") && readyToInteract && !startDialogue)
+            {
             
-            FindObjectOfType<CharTankController>().speedRotation = 0f;
-            FindObjectOfType<CharTankController>().speed = 0f;
-            StartDialogue();
+                StartDialogue();
+
+            }
+            else if(dialogueText.text == dialogues[dialogueIndex] && Input.GetButton("Fire1"))
+            {
+                NextDialogue();
+            }
+        
+        }
+        else
+        {
+            if(Input.GetKey("e") && readyToInteract && !startDialogue)
+            {
+                StartItemDialogue();
+            }
+            else if(dialogueText.text == itemDescription)
+            {
+                startDialogue = false;
+            }
 
         }
-        else if(dialogueText.text == dialogues[dialogueIndex] && Input.GetButton("Fire1"))
-        {
-            NextDialogue();
-        }
         
+        
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            readyToInteract = true;    
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("Player") && gameObject.CompareTag("KeyItem"))
+        {
+            GameManager.instance.GetItemData(item, gameObject);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+
+        if(other.CompareTag("Player"))
+        {
+            readyToInteract = false;    
+        }
+
     }
 
     public void NextDialogue()
@@ -53,18 +100,27 @@ public class DialogueSystem : MonoBehaviour
             dialoguePanel.SetActive(false);
             startDialogue = false;
             dialogueIndex = 0;
-            FindObjectOfType<CharTankController>().speedRotation = 180f;
-            FindObjectOfType<CharTankController>().speed = 3.8f;
         }
     }
 
     public void StartDialogue()
     {
         dialoguePanel.SetActive(true);
+        btns.SetActive(false);
         startDialogue = true;
         dialogueIndex = 0;
         StartCoroutine(ShowDialogue());
     }
+
+    public void StartItemDialogue()
+    {
+        dialoguePanel.SetActive(true);
+        btns.SetActive(true);
+        startDialogue = true;
+        StartCoroutine(ShowItemDialogue());
+    }
+
+
 
     IEnumerator ShowDialogue()
     {
@@ -75,23 +131,16 @@ public class DialogueSystem : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
     }
-
-
-    public void OnTriggerEnter(Collider other)
+    IEnumerator ShowItemDialogue()
     {
-        if(other.CompareTag("Player"))
+        dialogueText.text = "";
+        foreach(char Letter in itemDescription)
         {
-            readyToSpeak = true;    
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-
-        if(other.CompareTag("Player"))
-        {
-            readyToSpeak = false;    
+            dialogueText.text += Letter;
+            yield return new WaitForSeconds(0.05f);
         }
 
     }
+
+    
 }
