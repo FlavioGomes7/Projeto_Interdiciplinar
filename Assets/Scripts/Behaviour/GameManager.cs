@@ -2,20 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject options;
     [SerializeField] private List<Item> Items = new List<Item>();
-    [SerializeField] private int hpmax;
-    [SerializeField] private int hpNow;
-    [SerializeField] private int damage;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject[] enemies;
+   
 
     private void Awake()
     {
         instance = this;
     }
 
+    //Inventory Manager
     public void AddItem(Item item)
     {
         Items.Add(item);
@@ -37,32 +42,69 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void TakeDamage(int damage)
+    // AutoAim System
+    public GameObject AutoAim()
     {
-        hpNow -= damage;  
+        float minDistance = Mathf.Infinity;
+        float distance;
+        int indexOfCloserEnemy = 0;
+        for (int i = 0; i < enemies.Length; i++)
+        {
+   
+            distance = Vector3.Distance(player.transform.position, enemies[i].transform.position);
+            if (minDistance > distance)
+            {
+               minDistance = distance;
+               indexOfCloserEnemy = i;
+
+            }
+
+        }
+        return enemies[indexOfCloserEnemy];
     }
-    public void RecorverHealth(int healthrecorver)
+
+    //Scenes Manager
+    public void StartGame()
     {
-        hpNow += healthrecorver;
+        SceneManager.LoadScene(1);
     }
-    public void IncreseHealthMax(int healthIncrese)
+
+    public void ExitGame()
     {
-        hpmax += healthIncrese;
+        Debug.Log("Saiu");
+        Application.Quit();
     }
-    public void GiveDamage(int hp)
+
+    public void BackToMenu()
     {
-        hp -= damage;
+        SceneManager.LoadScene(0);
     }
+
+    public void OpenOptions()
+    {
+        menu.SetActive(false);
+        options.SetActive(true);
+    }
+
+    public void CloseOptions()
+    {
+        menu.SetActive(true);
+        options.SetActive(false);
+    }
+
 
     public void Start()
     {
-        hpNow = hpmax;
-    }
+        player = GameObject.FindGameObjectWithTag("Player");
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
+    }
     public void Update()
     {
+        
 
-        Debug.Log(hpNow);
+
     }
+    
 
 }

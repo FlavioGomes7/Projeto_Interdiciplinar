@@ -13,14 +13,9 @@ public class KeyItem : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && Input.GetKey("e"))
         {
-            
-            if(Input.GetKey("e"))
-            {
-               Pickup();
-            }
-
+            Pickup();
         }
     }
 

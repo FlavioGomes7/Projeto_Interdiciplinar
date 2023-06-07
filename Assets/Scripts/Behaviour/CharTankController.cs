@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class CharTankController : MonoBehaviour
 {
-    Animator animator;
-    private CapsuleCollider character;
+    private Animator animator;
+    private GameObject character;
     private bool isWalking;
     private bool isAiming;
     private bool isShooting;
@@ -14,8 +15,13 @@ public class CharTankController : MonoBehaviour
     private bool isDamaged;
     private float rotationMove;
     private float verticalMove;
-    [SerializeField] private float speedRotation;
-    [SerializeField] private float speed;
+    [SerializeField] public float speedRotation;
+    [SerializeField] public float speed;
+    [SerializeField] private float fireRate;
+    [SerializeField] private float fireRange;
+    [SerializeField] public int health;
+    [SerializeField] private int attack;
+    
 
     private void IsMoving()
     {
@@ -24,8 +30,8 @@ public class CharTankController : MonoBehaviour
             isWalking = true;
             rotationMove = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speedRotation;
             verticalMove = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
-            character.transform.Rotate(0f, rotationMove, 0f);
-            character.transform.Translate(0f, 0f, verticalMove);
+            transform.Rotate(0f, rotationMove, 0f);
+            transform.Translate(0f, 0f, verticalMove);
             if(Input.GetAxisRaw("Vertical") == -1)
             {
                 isReverse = true;
@@ -66,8 +72,10 @@ public class CharTankController : MonoBehaviour
     {
         if(Input.GetButton("Fire2"))
         {
-            rotationMove = Input.GetAxis("Horizontal") * Time.deltaTime * speedRotation;
-            character.transform.Rotate(0f, rotationMove, 0f);
+    
+            Vector3 targetposition = GameManager.instance.AutoAim().transform.position;
+            Vector3 forward = new Vector3(targetposition.x - transform.position.x, targetposition.y - transform.position.y, targetposition.z - transform.position.z);
+            transform.forward = forward;
             isAiming = true;
             isWalking = false;
         }
@@ -77,64 +85,57 @@ public class CharTankController : MonoBehaviour
         }
   
     }
-    private void IsShooting()
+    IEnumerator FireShoot()
     {
-        if (Input.GetButton("Fire1"))
-        {
-            isShooting = true;
-            isWalking = false;
-        }
-        else
-        {
-            isShooting = false;
-        }
+        animator.Play("Fire_Shooter_Anim");
+        GameObject target = GameManager.instance.AutoAim();
+        target.GetComponent<Spider>().hp -= attack;
+        yield return new WaitForSeconds (fireRate);
+        isShooting = false;
     }
 
-    
+   /*public bool CanAttackEnemy()
+    {
+        Vector3 direction = player.transform.position - enemy.transform.position;
+        float angle = Vector3.Angle(direction, enemy.transform.forward);
+        if (direction.magnitude < enemyInfo.attackDist && angle < enemyInfo.attackAngle)
+        {
+            return true;
+        }
+        return false;
+
+    }*/
+
+
+
 
     void Start()
     {
-        character = GetComponent<CapsuleCollider>();
+        character = GetComponent<GameObject>();
         animator = GetComponent<Animator>();
     }
     
     void FixedUpdate()
     {
+        if (Input.GetButton("Fire1") && Input.GetButton("Fire2") && isShooting == false)
+        {
+          isShooting = true;
+          StartCoroutine(FireShoot());
 
+        }
         IsMoving();
         IsAiming();
-        IsShooting();
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isAiming", isAiming);
-        animator.SetBool("isShooting", isShooting);
-        animator.SetBool("isDamaged", isDamaged);
         animator.SetBool("isReverse", isReverse);
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-
-        if (other.tag == "Spider")
+        if(health <= 0)
         {
-
-            isDamaged = true;
-            
-
+            GameManager.instance.BackToMenu();
         }
-
     }
 
-    public void OnTriggerExit(Collider other)
-    {
+   
 
-        if (other.tag == "Spider")
-        {
-
-            isDamaged = false;
-
-        }
-        
-    }
 
 
 }
