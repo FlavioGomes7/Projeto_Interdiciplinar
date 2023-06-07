@@ -15,7 +15,7 @@ ModelImporter:
       name: Texture_Character_Version_8BIT
     second: {fileID: 2800000, guid: 37458c3cc4cd14647a6717bb6e06e709, type: 3}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
