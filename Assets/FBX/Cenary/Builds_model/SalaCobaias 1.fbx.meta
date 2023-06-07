@@ -1,23 +1,13 @@
 fileFormatVersion: 2
-guid: 3462a7ca01b26ad49970462097d36b21
+guid: 719cafe48c9d9da4bb848a66f6fae6fe
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Corredor_Texture_Wall
-    second: {fileID: 2100000, guid: 4375b2db948b68b4585168d62a3e4710, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Atlas_Texture_Lab
-    second: {fileID: 2800000, guid: 2f259d538a0732e469ac51e84124d63c, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 0
-    materialName: 2
-    materialSearch: 2
+    materialName: 0
+    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
