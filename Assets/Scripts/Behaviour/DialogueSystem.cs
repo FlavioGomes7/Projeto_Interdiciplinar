@@ -35,7 +35,9 @@ public class DialogueSystem : MonoBehaviour
         {
             if(Input.GetKey("e") && readyToInteract && !startDialogue)
             {
-            
+
+                FindObjectOfType<CharTankController>().speedRotation = 0f;
+                FindObjectOfType<CharTankController>().speed = 0f;
                 StartDialogue();
 
             }
@@ -49,6 +51,8 @@ public class DialogueSystem : MonoBehaviour
         {
             if(Input.GetKey("e") && readyToInteract && !startDialogue)
             {
+                FindObjectOfType<CharTankController>().speedRotation = 0f;
+                FindObjectOfType<CharTankController>().speed = 0f;
                 StartItemDialogue();
             }
             else if(dialogueText.text == itemDescription)
@@ -100,6 +104,8 @@ public class DialogueSystem : MonoBehaviour
             dialoguePanel.SetActive(false);
             startDialogue = false;
             dialogueIndex = 0;
+            FindObjectOfType<CharTankController>().speedRotation = 180f;
+            FindObjectOfType<CharTankController>().speed = 3f;
         }
     }
 

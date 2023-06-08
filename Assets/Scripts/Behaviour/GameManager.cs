@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         btns.SetActive(false);
+        FindObjectOfType<CharTankController>().speedRotation = 180f;
+        FindObjectOfType<CharTankController>().speed = 3f;
     }
 
     // AutoAim System
