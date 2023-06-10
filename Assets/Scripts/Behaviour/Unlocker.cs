@@ -14,7 +14,7 @@ public class Unlocker : MonoBehaviour
             
             if(Input.GetKey("e"))
             {
-               GameManager.instance.Unlock(item, game);
+               GameManager.instance.Unlock(item);
             }
 
         }

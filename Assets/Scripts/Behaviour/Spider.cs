@@ -56,6 +56,7 @@ public class Spider : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         hp = enemyInfo.health;
+        agent.speed = enemyInfo.speed;
         
     }
 
@@ -64,7 +65,6 @@ public class Spider : MonoBehaviour
     {
 
         agent.SetDestination(player.transform.position);
-        agent.speed = enemyInfo.speed;
         if(agent.hasPath)
         {
 

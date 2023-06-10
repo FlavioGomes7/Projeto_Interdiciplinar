@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -31,6 +32,25 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    public void Pause()
+    {
+        foreach(GameObject enemy in enemies)
+        {
+            enemy.GetComponent<NavMeshAgent>().speed = 0;
+        }
+    }
+
+    public void Resume()
+    {
+        foreach(GameObject enemy in enemies)
+        {
+            enemy.GetComponent<NavMeshAgent>().speed = 2f;
+        }
+
+    }
+
+
+
     //Inventory Manager
     public void AddItem(Item item)
     {
@@ -42,13 +62,17 @@ public class GameManager : MonoBehaviour
         Items.Remove(item);
     }
 
-    public void Unlock(Item itemSO, GameObject gameobj)
+    public bool Unlock(Item itemSO)
     {
         bool unlock = false;
         unlock = Items.Contains(itemSO);
         if(unlock == true)
         {
-            Destroy(gameobj);
+            return true;
+        }
+        else
+        {
+            return false;
         }
         
     }
@@ -67,9 +91,13 @@ public class GameManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         btns.SetActive(false);
+        Resume();
         FindObjectOfType<CharTankController>().speedRotation = 180f;
         FindObjectOfType<CharTankController>().speed = 3f;
     }
+
+
+
 
     // AutoAim System
     public GameObject AutoAim()

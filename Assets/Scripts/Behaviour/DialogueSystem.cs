@@ -71,10 +71,7 @@ public class DialogueSystem : MonoBehaviour
         {
             readyToInteract = true;    
         }
-    }
-
-    public void OnTriggerStay(Collider other)
-    {
+        
         if(other.CompareTag("Player") && gameObject.CompareTag("KeyItem"))
         {
             GameManager.instance.GetItemData(item, gameObject);
@@ -104,6 +101,7 @@ public class DialogueSystem : MonoBehaviour
             dialoguePanel.SetActive(false);
             startDialogue = false;
             dialogueIndex = 0;
+            GameManager.instance.Resume();
             FindObjectOfType<CharTankController>().speedRotation = 180f;
             FindObjectOfType<CharTankController>().speed = 3f;
         }
@@ -115,6 +113,7 @@ public class DialogueSystem : MonoBehaviour
         btns.SetActive(false);
         startDialogue = true;
         dialogueIndex = 0;
+        GameManager.instance.Pause();
         StartCoroutine(ShowDialogue());
     }
 
@@ -123,6 +122,7 @@ public class DialogueSystem : MonoBehaviour
         dialoguePanel.SetActive(true);
         btns.SetActive(true);
         startDialogue = true;
+        GameManager.instance.Pause();
         StartCoroutine(ShowItemDialogue());
     }
 
