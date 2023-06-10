@@ -74,7 +74,7 @@ public class Spider : MonoBehaviour
                 isAttacking = true;
                 StartCoroutine(AttackPlayer());
             }
-            else if((canSeePlayer() && isAttacking) || (!canSeePlayer()))
+            else if((canSeePlayer() && isAttacking) || (!canSeePlayer()) || (hp <= 0))
             {
               agent.isStopped = true;
 

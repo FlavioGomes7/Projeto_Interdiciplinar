@@ -17,7 +17,7 @@ public class CharTankController : MonoBehaviour
     [SerializeField] public float speedRotation;
     [SerializeField] public float speed;
     [SerializeField] private float fireRate;
-    [SerializeField] private float fireRange;
+    [SerializeField] private bool canShoot;
     [SerializeField] public int health;
     [SerializeField] private int attack;
     
@@ -25,11 +25,12 @@ public class CharTankController : MonoBehaviour
     {
         character = GetComponent<GameObject>();
         animator = GetComponent<Animator>();
+        canShoot = false;
     }
     
     void FixedUpdate()
     {
-        if (Input.GetButton("Fire1") && Input.GetButton("Fire2") && isShooting == false)
+        if ( (Input.GetButton("Fire1") && Input.GetButton("Fire2")) && (isShooting == false && canShoot))
         {
           isShooting = true;
           StartCoroutine(FireShoot());
@@ -45,6 +46,28 @@ public class CharTankController : MonoBehaviour
             GameManager.instance.BackToMenu();
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            canShoot = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Enemy"))
+        {
+            canShoot = false;
+        }
+    }
+
+
+
+
+
+
 
     private void IsMoving()
     {
@@ -93,7 +116,7 @@ public class CharTankController : MonoBehaviour
     }
     private void IsAiming()
     {
-        if(Input.GetButton("Fire2"))
+        if(Input.GetButton("Fire2") && canShoot)
         {
     
             Vector3 targetposition = GameManager.instance.AutoAim().transform.position;
