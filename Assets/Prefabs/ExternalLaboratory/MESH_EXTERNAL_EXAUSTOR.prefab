@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5041046542843041367}
   - component: {fileID: 8240107968214981106}
   - component: {fileID: 6178456844663598392}
+  - component: {fileID: 362430508618050335}
   m_Layer: 0
   m_Name: MESH_EXTERNAL_EXAUSTOR
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &362430508618050335
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5674172364576689389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4311643927521677509, guid: 9906a936fd0352a46a220ee857996486, type: 3}
