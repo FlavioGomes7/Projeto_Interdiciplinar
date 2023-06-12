@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6139257995483420097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg0.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 276156408430665605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cabeca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344468968624405558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8998533515383514643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.003_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 265603585442622074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.002_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7299867454806909351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4202873748368890223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.005_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1221982931746088395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4361194201778729896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 549466020384132761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5478598445236290306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.007_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3180553088191864701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7647033014721545776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 3220060639831490889}
   - component: {fileID: 3220060639831490888}
   - component: {fileID: 3220060639831490890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Aranha
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4256892790429278782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5574523766010324982}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2569840610517632393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.004_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3120922191236476160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg2.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4501407740244297384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2206057477476892227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3251467551939345612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.01_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5959142046840886137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -788,7 +788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5732175791151870667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg8_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2566209384634593535}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.005_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 453087818914447566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg2.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 142088352472140642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3026328130362874169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg2.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4684334142331804847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg0.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2028871384590076075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg1.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2190392810720538810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8717694894779032034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg0.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,7 +1074,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2752964240101023786}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg2.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629522354670290616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.02_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1137,7 +1137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6311117821647375370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1177,7 +1177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3989293907171052408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.004_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1208,7 +1208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3417444016940181705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9128289175846567240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg1.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1272,7 +1272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1205863641187645712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1303,7 +1303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8406026313814213939}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1335,7 +1335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6075585812652971278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg0.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1367,7 +1367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2876607244652617509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1399,7 +1399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8619127789486512965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1431,7 +1431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8882264405538092881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.006_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,7 +1462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8911875310424343115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.002_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1493,7 +1493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9160883723728258407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg0.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2428088173660893575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg0.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820697459024510643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,7 +1589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436712588554348079}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg2.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8387148834370997754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg2.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1653,7 +1653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6308523278213602485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg2.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1685,7 +1685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6742800002893090546}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg0.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1717,7 +1717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2231896142296211205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1749,7 +1749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8871160128736556853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg3.003_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4780406403706333469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.00_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1811,7 +1811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1907826313991683529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg1.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,7 +1843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3892965882349467106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg1.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1875,7 +1875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7138979413919790633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1908,7 +1908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2939915970621207826}
   - component: {fileID: 4272029453747140421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: aranha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2034,7 +2034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3106064715416754506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torax
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2066,7 +2066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 956328820002065311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: legIK.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2098,7 +2098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7302853945682892790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
