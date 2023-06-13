@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Principal.unity
     guid: 7edaa164fc039694a870df7e0e11cd60
   - enabled: 1
-    path: Assets/Scenes/CenaApresentation.unity
+    path: Assets/Scenes/Extern-1.unity
+    guid: 7b3d7f5c113f5634088da6ec85fedd50
+  - enabled: 1
+    path: Assets/Scenes/Intern-1.unity
     guid: 2390d1878a254c74f801c419defb299c
   m_configObjects: {}

@@ -17,6 +17,7 @@ public class DoorSystem : MonoBehaviour
 
     //Sistema de Liberação
     [SerializeField] private Item item;
+    [SerializeField] private bool isSceneChange;
     [SerializeField] private bool isLocked;
     [SerializeField] private bool isClose;
 
@@ -42,15 +43,31 @@ public class DoorSystem : MonoBehaviour
     {
         if(isClose)
         {
-            if((Input.GetKey("e") && !isLocked) && !startWarning)
+            if((Input.GetKey("e") && !isLocked) && (!startWarning && !isSceneChange) )
             {
                 TakeToTheLocal();
             }
-            else if((Input.GetKey("e") && isLocked) && !startWarning)
+            else if( (Input.GetKey("e") && isLocked) && (!startWarning && !isSceneChange) )
             {
                 if(GameManager.instance.Unlock(item) == true)
                 {
                     TakeToTheLocal();
+                }
+                else
+                {
+                    Warning();
+                }
+            }
+            else if( (Input.GetKey("e") && !isLocked) && (!startWarning && isSceneChange) )
+            {
+                LoadNextLevel();
+            }
+            else if( (Input.GetKey("e") && isLocked) && (!startWarning && isSceneChange) )
+            {
+
+                if(GameManager.instance.Unlock(item) == true)
+                {
+                    LoadNextLevel();
                 }
                 else
                 {
@@ -77,7 +94,7 @@ public class DoorSystem : MonoBehaviour
         }
    }
 
-    /*Troca De Cena
+   //Troca De Cena
    public void LoadNextLevel()
    {
         render.SetActive(true);
@@ -91,7 +108,7 @@ public class DoorSystem : MonoBehaviour
         video.Stop();
         render.SetActive(false);
         SceneManager.LoadScene(index);
-   }*/
+   }
 
    //Troca de posição
     public void TakeToTheLocal()
