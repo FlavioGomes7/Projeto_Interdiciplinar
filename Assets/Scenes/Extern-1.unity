@@ -31976,6 +31976,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Dialogo
       objectReference: {fileID: 0}
+    - target: {fileID: 6802107920915572910, guid: 38eff5f6556c2284989f2cf8ecbee9d6, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802107920915572910, guid: 38eff5f6556c2284989f2cf8ecbee9d6, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802107920915572910, guid: 38eff5f6556c2284989f2cf8ecbee9d6, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38eff5f6556c2284989f2cf8ecbee9d6, type: 3}
 --- !u!1001 &825408064
@@ -40104,8 +40116,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7015961586750313769, guid: b6f0b95b961032d4ea607041fdb5936d, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015961586750313769, guid: b6f0b95b961032d4ea607041fdb5936d, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015961586750313770, guid: b6f0b95b961032d4ea607041fdb5936d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015961586750313770, guid: b6f0b95b961032d4ea607041fdb5936d, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015961586750313770, guid: b6f0b95b961032d4ea607041fdb5936d, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 7015961586750313772, guid: b6f0b95b961032d4ea607041fdb5936d, type: 3}
       propertyPath: m_Name
