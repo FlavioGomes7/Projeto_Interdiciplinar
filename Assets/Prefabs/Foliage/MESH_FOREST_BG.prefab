@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7551339936308764052}
   - component: {fileID: 6873729142683636273}
   - component: {fileID: 8683102214404204283}
-  - component: {fileID: 6323764889377452273}
   m_Layer: 0
   m_Name: MESH_FOREST_BG
   m_TagString: Untagged
@@ -41,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7169852675303393070}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 5913884567273351325, guid: 88eb93517a7b2a547935f93b7d8a0995, type: 3}
 --- !u!23 &8683102214404204283
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84,49 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6323764889377452273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7169852675303393070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd5e5ddd242bd64581fb5ed9c0e0507, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PolyMesh:
-    name: MESH_FOREST_BG
-    vertices:
-    - {x: 2.2901437, y: 0, z: -0.00000004371139}
-    - {x: 2.2901437, y: 2, z: 0.00000004371139}
-    - {x: -2.2901437, y: 2, z: 0.00000004371139}
-    - {x: -2.2901437, y: 0, z: -0.00000004371139}
-    normals:
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    - {x: 0, y: 0, z: 1}
-    colors: []
-    tangents:
-    - {x: -1, y: 0, z: 0, w: -1}
-    - {x: -1, y: 0, z: 0, w: -1}
-    - {x: -1, y: 0, z: 0, w: -1}
-    - {x: -1, y: 0, z: 0, w: -1}
-    uv0:
-    - {x: 0.005440429, y: 0.77781963, z: 0, w: 0}
-    - {x: 0.005440429, y: 0.9990208, z: 0, w: 0}
-    - {x: 0.49830604, y: 0.9990208, z: 0, w: 0}
-    - {x: 0.49830604, y: 0.77781963, z: 0, w: 0}
-    uv1: []
-    uv2: []
-    uv3: []
-    m_Triangles: 000000000100000002000000000000000200000003000000
-    m_SubMeshes:
-    - m_Indexes: 000000000100000002000000000000000200000003000000
-      m_Topology: 0
-    m_Mesh: {fileID: 0}
-  m_SkinMeshRef: {fileID: 0}
-  m_OriginalMeshObject: {fileID: 5913884567273351325, guid: 88eb93517a7b2a547935f93b7d8a0995, type: 3}
-  m_Mode: 0
