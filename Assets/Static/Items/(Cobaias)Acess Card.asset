@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfefe3526ce4581438649348ce03f33c, type: 3}
-  m_Name: Acess Card
+  m_Name: (Cobaias)Acess Card
   m_EditorClassIdentifier: 
-  id: A
-  itemName: Server Acess Card
-  description: "Cart\xE3o de acesso para os servidores da instala\xE7\xE3o"
+  id: Cobaias
+  itemName: "Cart\xE3o de acesso (Sala de cobaias)"
+  description: "Cart\xE3o de acesso para a sala de cobaia da instala\xE7\xE3o"
