@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 848594062354752906}
   - component: {fileID: 4353032887233554991}
   - component: {fileID: 1985492673183014629}
+  - component: {fileID: -3448541046528326904}
   m_Layer: 0
   m_Name: MESH_MESA_GAVETA_02
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-3448541046528326904
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39722473852862256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6357876267567925427, guid: 96830c7a5b7b41740aeb1824ee9575ee, type: 3}
