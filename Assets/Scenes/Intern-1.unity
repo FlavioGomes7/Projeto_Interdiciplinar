@@ -17935,7 +17935,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309582011}
-  m_LocalRotation: {x: 0.11141853, y: 0.6925323, z: -0.10955247, w: 0.70426077}
+  m_LocalRotation: {x: 0.06332734, y: 0.69837487, z: -0.062260743, w: 0.7102012}
   m_LocalPosition: {x: 0.8103123, y: 2.6632552, z: -6.1826773}
   m_LocalScale: {x: 0.99999994, y: 1, z: 0.9999999}
   m_ConstrainProportionsScale: 0
@@ -17943,7 +17943,7 @@ Transform:
   - {fileID: 371843713}
   m_Father: {fileID: 703500059}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.19, y: 89.038, z: 0.001}
 --- !u!114 &1309582013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27116,6 +27116,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6642498405046069119, guid: 36e9d968b0ff5894ca2bcf12cbe089c9, type: 3}
   m_PrefabInstance: {fileID: 1481643105}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2026639486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2026639487}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2026639487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026639486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2028949739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8379977890927842968, guid: f2c29263ab0ad7e438f766fca387b75e, type: 3}
@@ -28685,7 +28716,7 @@ MonoBehaviour:
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
-  m_Dithering: 0
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
