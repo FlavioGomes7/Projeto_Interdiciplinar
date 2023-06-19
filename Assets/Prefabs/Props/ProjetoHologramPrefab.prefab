@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 95
   m_IsActive: 1
 --- !u!4 &2254872474689163318
 Transform:
@@ -91,6 +91,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 71ee7e7acbbe8be4385ebe67f4951bb2, type: 3}
       propertyPath: m_Name
       value: MESH_PROJETOR_PROP
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 71ee7e7acbbe8be4385ebe67f4951bb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71ee7e7acbbe8be4385ebe67f4951bb2, type: 3}
@@ -180,6 +184,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 864d8f98994d52149a214f7537b90ffb, type: 3}
       propertyPath: m_Name
       value: MESH_PROJECAO_HOLOGRAM
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 864d8f98994d52149a214f7537b90ffb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 864d8f98994d52149a214f7537b90ffb, type: 3}
