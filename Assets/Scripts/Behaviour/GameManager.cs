@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
     }
 
     public void OpenOptions()
