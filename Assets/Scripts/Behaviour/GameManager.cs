@@ -137,6 +137,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void EndGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void OpenOptions()
     {
         menu.SetActive(false);

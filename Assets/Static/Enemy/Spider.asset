@@ -19,5 +19,5 @@ MonoBehaviour:
   attackAngle: 30
   attackRate: 2
   attack: 1
-  health: 5
+  health: 3
   speed: 2

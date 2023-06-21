@@ -120,8 +120,10 @@ public class DoorSystem : MonoBehaviour
      public IEnumerator NewLocal()
     {
         video.Play();
+        GameManager.instance.Pause();
         yield return new WaitForSeconds(7.0f);
         video.Stop();
+        GameManager.instance.Resume();
         render.SetActive(false);
         player.position = Spawn.position;
     }
