@@ -25,9 +25,9 @@ public class TimeCodeCamera : MonoBehaviour
         currentHour = startHour + Mathf.FloorToInt(elapsedTime / 3600);
         currentMinute = startMinute + Mathf.FloorToInt(elapsedTime / 60) % 60;
         currentSecond = startSecond + Mathf.FloorToInt(elapsedTime % 60);
-
+        
         // Exibe o time code no console
-        textTimer.SetText("{0}:{1}:{2}", currentHour, currentMinute, currentSecond);
+        textTimer.SetText("{0:00}:{1:00}:{2:00}", currentHour, currentMinute, currentSecond);
     }
 
 }
